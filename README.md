@@ -5,7 +5,7 @@
 
 
 <p align="center">
-  🤗 <a href="https://huggingface.co/WisdomShell" target="_blank">Hugging Face</a> • 🤖 <a href="https://modelscope.cn/organization/WisdomShell" target="_blank">ModelScope</a> • ⭕️ <a href="https://www.wisemodel.cn/organization/WisdomShell" target="_blank">WiseModel</a> • 🌐 <a href="http://se.pku.edu.cn/kcl/" target="_blank">PKU-KCL</a> 
+  🤗 <a href="https://huggingface.co/WisdomShell/Shell-7B" target="_blank">Hugging Face</a> • 🤖 <a href="https://modelscope.cn/organization/WisdomShell" target="_blank">ModelScope</a> • ⭕️ <a href="https://www.wisemodel.cn/organization/WisdomShell" target="_blank">WiseModel</a> • 🌐 <a href="http://se.pku.edu.cn/kcl/" target="_blank">PKU-KCL</a> 
 </p>
 <div align="center">
 
@@ -19,7 +19,7 @@
 
 ## Introduction
 
-Shell是[蚌壳智能](https://openbankai.com/)联合[北京大学知识计算实验室](http://se.pku.edu.cn/kcl/)在代码大模型[CodeShell](https://github.com/WisdomShell/codeshell)基础上训练的预训练通用大模型。Shell在保留Codeshell优异的代码能力的同时，具有以下特性：
+Shell是[蚌壳智能](https://openbankai.com/)联合[北京大学知识计算实验室](http://se.pku.edu.cn/kcl/)在代码大模型[CodeShell](https://github.com/WisdomShell/codeshell)基础上训练的通用大模型基座。Shell在保留Codeshell优异的代码能力的同时，具有以下特性：
 
 - **更全面的通用能力**：Shell在Codeshell的基础上继续预训练了1.5 T token的中英文语料，通用能力大幅提升。在语言、知识、推理等评测中，Shell均取得了优异的性能。
 - **依旧强大的代码能力**：Shell在继续预训练的过程中，保留了20%高质量代码数据，使得Shell在获得通用能力的同时，依旧保留了CodeShell强大的代码能力。
@@ -83,9 +83,9 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 tokenizer = AutoTokenizer.from_pretrained("WisdomShell/Shell-7B-Base")
 model = AutoModelForCausalLM.from_pretrained("WisdomShell/Shell-7B-Base", trust_remote_code=True, torch_dtype=torch.bfloat16).to(device)
-inputs = tokenizer('你好', return_tensors='pt').to(device)
-outputs = model.generate(**inputs)
-print(tokenizer.decode(outputs[0]))
+history = []
+output = model.generate('你好', history, tokenizer)
+print(output)
 ```
 
 ### 加载Shell-7B-Chat
