@@ -83,9 +83,9 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 tokenizer = AutoTokenizer.from_pretrained("WisdomShell/Shell-7B-Base")
 model = AutoModelForCausalLM.from_pretrained("WisdomShell/Shell-7B-Base", trust_remote_code=True, torch_dtype=torch.bfloat16).to(device)
-history = []
-output = model.generate('你好', history, tokenizer)
-print(output)
+inputs = tokenizer('你好', return_tensors='pt').to(device)
+outputs = model.generate(**inputs)
+print(tokenizer.decode(outputs[0]))
 ```
 
 ### 加载Shell-7B-Chat
@@ -99,9 +99,9 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 tokenizer = AutoTokenizer.from_pretrained("WisdomShell/Shell-7B-Chat")
 model = AutoModelForCausalLM.from_pretrained("WisdomShell/Shell-7B-Chat", trust_remote_code=True, torch_dtype=torch.bfloat16).to(device)
-inputs = tokenizer('你好', return_tensors='pt').to(device)
-outputs = model.generate(**inputs)
-print(tokenizer.decode(outputs[0]))
+history = []
+output = model.chat('你是谁', history, tokenizer)
+print(output)
 ```
 
 ### Shell in c/c++
