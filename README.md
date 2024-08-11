@@ -19,7 +19,7 @@
 
 ## Introduction
 
-Shell是[北京大学知识计算实验室](http://se.pku.edu.cn/kcl/)在代码大模型[CodeShell](https://github.com/WisdomShell/codeshell)基础上训练的预训练通用大模型。Shell在保留Codeshell优异的代码能力的同时，具有以下特性：
+Shell是[蚌壳智能](https://openbankai.com/)联合[北京大学知识计算实验室](http://se.pku.edu.cn/kcl/)在代码大模型[CodeShell](https://github.com/WisdomShell/codeshell)基础上训练的预训练通用大模型。Shell在保留Codeshell优异的代码能力的同时，具有以下特性：
 
 - **更全面的通用能力**：Shell在Codeshell的基础上继续预训练了1.5 T token的中英文语料，通用能力大幅提升。在语言、知识、推理等评测中，Shell均取得了优异的性能。
 - **依旧强大的代码能力**：Shell在继续预训练的过程中，保留了20%高质量代码数据，使得Shell在获得通用能力的同时，依旧保留了CodeShell强大的代码能力。
