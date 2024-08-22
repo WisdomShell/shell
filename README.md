@@ -62,7 +62,7 @@ Shell是[蚌壳智能](https://openbankai.com/)联合[北京大学知识计算�
 
 ## Quickstart
 
-Shell系列模型已经上传至 <a href="https://huggingface.co/WisdomShell/CodeShell" target="_blank">Hugging Face</a>，开发者可以通过Transformers快速调用Shell-7B和Shell-Chat-7B。
+Shell系列模型已经上传至 <a href="https://huggingface.co/WisdomShell/Shell-7B" target="_blank">Hugging Face</a>，开发者可以通过Transformers快速调用Shell-7B和Shell-Chat-7B。
 
 在开始之前，请确保已经正确设置了环境，并安装了必要的代码包，以及满足上一小节的环境要求。你可以通过下列代码快速安装相关依赖。
 
@@ -106,7 +106,7 @@ print(output)
 
 ### Shell in c/c++
 
-由于大部分个人电脑没有GPU，Shell提供了C/C++版本的推理支持，开发者可以根据本地环境进行编译与使用，详见[CodeShell C/C++本地化版](https://github.com/WisdomShell/llama_cpp_for_codeshell)。
+由于大部分个人电脑没有GPU，Shell提供了C/C++版本的推理支持，开发者可以根据本地环境进行编译与使用，详见[Shell C/C++本地化版](https://github.com/WisdomShell/llama_cpp_for_codeshell)。
 
 
 ## Finetune
@@ -155,19 +155,19 @@ python demos/cli_demo.py
 
 ### API
 
-CodeShell也提供了基于OpenAI API的部署方法。
+Shell也提供了基于OpenAI API的部署方法。
 
 ```
 python demos/openai_api.py
 ```
 
-启动后即可通过HTTP请求与CodeShell交互。
+启动后即可通过HTTP请求与Shell交互。
 
 ```
 curl http://127.0.0.1:8000/v1/chat/completions \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "CodeShell-7B-Chat",
+    "model": "Shell-7B-Chat",
     "messages": [
       {
         "role": "user",
