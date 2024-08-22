@@ -27,8 +27,8 @@ Shell是[蚌壳智能](https://openbankai.com/)联合[北京大学知识计算�
 
 本次我们同时发布了Shell-7B的base版本和chat版本，大家可以根据自身需求选择对应的模型。
 
-- **Shell-7B-Base**：具有强大语义理解能力的通用大模型，大家可以基于该模型微调自己的大模型。
-- **Shell-7B-Chat**：在Shell-7B-Base微调得到的对话预训练模型，直接下载使用即可获得流畅的对话体验。
+- **[Shell-7B-Base](https://huggingface.co/WisdomShell/Shell-7B)**：具有强大语义理解能力的通用大模型，大家可以基于该模型微调自己的大模型。
+- **[Shell-7B-Chat](https://huggingface.co/WisdomShell/Shell-7B-Chat)**：在Shell-7B-Base微调得到的对话预训练模型，直接下载使用即可获得流畅的对话体验。
 
 
 ## Performance
